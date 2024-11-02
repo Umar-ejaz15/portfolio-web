@@ -248,6 +248,8 @@ export default function Home() {
         {/* End of Skills Overview */}
         
       </section>
+      
+      
     </>
   );
 }
