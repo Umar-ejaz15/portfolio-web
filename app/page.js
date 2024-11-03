@@ -66,14 +66,14 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full h-screen">
-        <section className="relative w-full h-full flex items-center justify-center overflow-hidden">
+      <section className="w-full h-screen px-4 sm:px-6 lg:px-10">
+        <section className="relative w-full h-full flex flex-col lg:flex-row items-center justify-center overflow-hidden">
           <div>
             <FaArrowRightLong className="absolute -z-20 opacity-10 font-thin overflow-hidden top-0 right-0 lg:text-[30rem] -rotate-45 m-0 p-0" />
           </div>
 
-          <section className="w-1/2 flex flex-col items-center justify-center">
-            <h1 className="group bg-gradient-to-r from-gray-500 via-zinc-600 to-gray-400 bg-clip-text text-transparent lg:text-7xl tracking-tighter text-center leading-none font-bold selection:bg-[#0a0a0a] selection:text-white-900">
+          <section className="w-full lg:w-1/2 flex flex-col items-center justify-center text-center lg:text-left">
+            <h1 className="group bg-gradient-to-r from-gray-500 via-zinc-600 to-gray-400 bg-clip-text text-transparent text-4xl md:text-6xl lg:text-7xl tracking-tighter leading-tight font-bold selection:bg-[#0a0a0a] selection:text-white">
               Hi I'm{" "}
               <span className="bg-gradient-to-r from-gray-500 via-zinc-600 to-gray-400 bg-clip-text text-transparent">
                 Umar
@@ -84,13 +84,13 @@ export default function Home() {
               </span>{" "}
               Js Developer
             </h1>
-            <Link href="/contactPage" className="mt-10">
+            <Link href="/contactPage" className="mt-6 md:mt-8 lg:mt-10">
               <Button text="Contact Me" />
             </Link>
           </section>
 
-          <section className="w-1/2 flex justify-end text-justify mr-10">
-            <p className="w-2/3 tracking-tighter leading-1 z-30 border-t-2 border-t-zinc-700 py-10 bg-gradient-to-r from-gray-200 via-zinc-500 to-gray-200 bg-clip-text text-transparent">
+          <section className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-6 lg:mt-0 px-4 lg:px-0">
+            <p className="max-w-lg tracking-tighter leading-6 lg:leading-relaxed border-t-2 border-t-zinc-700 py-6 bg-gradient-to-r from-gray-200 via-zinc-500 to-gray-200 bg-clip-text text-transparent">
               Passionate Next.js developer with experience in building dynamic,
               responsive, and scalable web applications. Skilled in creating
               seamless user experiences through optimized front-end designs and
@@ -103,33 +103,29 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section className="w-full h-[40%] flex justify-center gap-8 flex-wrap">
-          {[
-            "SSR & SSG Expertise",
-            "API Integration",
-            "Responsive UI Design",
-            "Authentication & Security",
-          ].map((item, index) => (
+        <section className="w-full h-auto flex justify-center gap-4 lg:gap-8 flex-wrap px-4 lg:px-0 mt-6">
+          {skillSet.map((item, index) => (
             <div
               key={index}
-              className="flex items-center justify-center h-10 px-4 py-2 rounded-md shadow-md cursor-pointer group"
+              className="flex items-center justify-center h-auto px-4 py-2 rounded-md shadow-md cursor-pointer group"
             >
-              <IoArrowForward className="text-2xl mr-2 transition-transform duration-300 ease-in-out group-hover:rotate-45" />
-              <p className="text-lg">{item}</p>
+              <IoArrowForward className="text-xl lg:text-2xl mr-2 transition-transform duration-300 ease-in-out group-hover:rotate-45" />
+              <p className="text-base lg:text-lg">{item.skill}</p>
             </div>
           ))}
         </section>
 
-        <section className="w-full h-full flex flex-col gap-10 justify-center items-center mt-10">
+        {/* Skills Details */}
+        <section className="w-full flex flex-col gap-6 justify-center items-center mt-10 px-4 sm:px-8 lg:px-16">
           {skillSet.map((item, index) => (
             <div
               key={index}
-              className="w-full flex justify-center items-center gap-10 px-10"
+              className="w-full flex flex-col lg:flex-row justify-center items-start lg:items-center gap-6 lg:gap-10 px-6"
             >
-              <h1 className="lg:text-4xl w-1/3 text-left tracking-tighter bg-gradient-to-r from-gray-400 via-zinc-600 to-gray-400 bg-clip-text text-transparent leading-none font-bold selection:bg-[#0a0a0a] selection:text-white-900">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-left tracking-tight bg-gradient-to-r from-gray-400 via-zinc-600 to-gray-400 bg-clip-text text-transparent leading-none selection:bg-[#0a0a0a] selection:text-white">
                 {item.skill}
               </h1>
-              <p className="w-2/3 tracking-tighter leading-1 z-30 border-t-2 border-t-zinc-700 py-10">
+              <p className="max-w-lg tracking-tight leading-6 border-t-2 border-t-zinc-700 py-4 lg:py-10">
                 {item.description}
               </p>
             </div>
@@ -137,11 +133,14 @@ export default function Home() {
         </section>
 
         {/* Skills Overview */}
-        <section className="max-w-screen-xl mx-auto p-6 rounded-lg shadow-md">
-          <h3 className="text-2xl font-semibold mb-4">Skills Overview</h3>
+        <section className="max-w-screen-xl mx-auto p-6 rounded-lg shadow-md mt-8 lg:mt-16">
+          <h3 className="text-xl md:text-2xl font-semibold mb-4">
+            Skills Overview
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* HTML Skill */}
             <div className="flex items-center">
-              <FaHtml5 className="text-orange-600 mr-3 text-3xl" />
+              <FaHtml5 className="text-orange-600 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">HTML</div>
                 <div className="h-2 bg-gray-300 rounded">
@@ -153,8 +152,9 @@ export default function Home() {
               </div>
             </div>
 
+            {/* CSS Skill */}
             <div className="flex items-center">
-              <FaCss3Alt className="text-blue-600 mr-3 text-3xl" />
+              <FaCss3Alt className="text-blue-600 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">CSS</div>
                 <div className="h-2 bg-gray-300 rounded">
@@ -166,8 +166,9 @@ export default function Home() {
               </div>
             </div>
 
+            {/* JavaScript Skill */}
             <div className="flex items-center">
-              <FaJsSquare className="text-yellow-500 mr-3 text-3xl" />
+              <FaJsSquare className="text-yellow-500 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">JavaScript</div>
                 <div className="h-2 bg-gray-300 rounded">
@@ -179,8 +180,9 @@ export default function Home() {
               </div>
             </div>
 
+            {/* React Skill */}
             <div className="flex items-center">
-              <FaReact className="text-blue-400 mr-3 text-3xl" />
+              <FaReact className="text-blue-400 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">React</div>
                 <div className="h-2 bg-gray-300 rounded">
@@ -192,8 +194,9 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Next.js Skill */}
             <div className="flex items-center">
-              <SiNextdotjs className="text-gray-800 mr-3 text-3xl" />
+              <SiNextdotjs className="text-gray-800 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">Next.js</div>
                 <div className="h-2 bg-gray-300 rounded">
@@ -205,8 +208,9 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Express.js Skill */}
             <div className="flex items-center">
-              <SiExpress className="text-gray-600 mr-3 text-3xl" />
+              <SiExpress className="text-gray-600 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">Express.js</div>
                 <div className="h-2 bg-gray-300 rounded">
@@ -218,8 +222,9 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Node.js Skill */}
             <div className="flex items-center">
-              <FaNodeJs className="text-green-600 mr-3 text-3xl" />
+              <FaNodeJs className="text-green-600 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">Node.js</div>
                 <div className="h-2 bg-gray-300 rounded">
@@ -231,8 +236,9 @@ export default function Home() {
               </div>
             </div>
 
+            {/* MongoDB Skill */}
             <div className="flex items-center">
-              <SiMongodb className="text-green-500 mr-3 text-3xl" />
+              <SiMongodb className="text-green-500 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">MongoDB</div>
                 <div className="h-2 bg-gray-300 rounded">
@@ -245,11 +251,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         {/* End of Skills Overview */}
-        
       </section>
-      
-      
     </>
   );
 }
