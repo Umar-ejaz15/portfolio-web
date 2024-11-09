@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import Link from "next/link";
 import { FaArrowAltCircleRight } from "react-icons/fa";
@@ -11,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-800 text-white">
+    <nav className=" text-white">
       <div className="flex justify-between items-center px-6 py-4 md:px-10">
         <div className="flex items-center">
           <Link
