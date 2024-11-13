@@ -107,7 +107,7 @@ export default function Home() {
           {skillSet.map((item, index) => (
             <div
               key={index}
-              className="flex items-center justify-center h-auto px-4 py-2 rounded-md shadow-md cursor-pointer group"
+              className="flex items-center justify-between h-auto px-4 py-2 rounded-md shadow-md cursor-pointer group"
             >
               <IoArrowForward className="text-xl lg:text-2xl mr-2 transition-transform duration-300 ease-in-out group-hover:rotate-45" />
               <p className="text-base lg:text-lg">{item.skill}</p>
@@ -116,11 +116,11 @@ export default function Home() {
         </section>
 
         {/* Skills Details */}
-        <section className="w-full flex flex-col gap-6 justify-center items-center mt-10 px-4 sm:px-8 lg:px-16">
+        <section className="w-full flex flex-col gap-6 justify-between items-center mt-10 px-4 sm:px-8 lg:px-16">
           {skillSet.map((item, index) => (
             <div
               key={index}
-              className="w-full flex flex-col lg:flex-row justify-center items-start lg:items-center gap-6 lg:gap-10 px-6"
+              className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 lg:gap-10 px-6"
             >
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-left tracking-tight bg-gradient-to-r from-gray-400 via-zinc-600 to-gray-400 bg-clip-text text-transparent leading-none selection:bg-[#0a0a0a] selection:text-white">
                 {item.skill}
@@ -133,7 +133,7 @@ export default function Home() {
         </section>
 
         {/* Skills Overview */}
-        <section className="max-w-screen-xl mx-auto p-6 rounded-lg shadow-md mt-8 lg:mt-16">
+        <section className="max-w-screen-xl h-auto flex  flex-col justify-center items-center mx-auto p-6 rounded-lg shadow-md mt-8 lg:mt-16">
           <h3 className="text-xl md:text-2xl font-semibold mb-4">
             Skills Overview
           </h3>
@@ -143,12 +143,6 @@ export default function Home() {
               <FaHtml5 className="text-orange-600 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">HTML</div>
-                <div className="h-2 bg-gray-300 rounded">
-                  <div
-                    className="h-full bg-orange-600"
-                    style={{ width: "90%" }}
-                  ></div>
-                </div>
               </div>
             </div>
 
@@ -157,12 +151,6 @@ export default function Home() {
               <FaCss3Alt className="text-blue-600 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">CSS</div>
-                <div className="h-2 bg-gray-300 rounded">
-                  <div
-                    className="h-full bg-blue-600"
-                    style={{ width: "85%" }}
-                  ></div>
-                </div>
               </div>
             </div>
 
@@ -171,12 +159,6 @@ export default function Home() {
               <FaJsSquare className="text-yellow-500 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">JavaScript</div>
-                <div className="h-2 bg-gray-300 rounded">
-                  <div
-                    className="h-full bg-yellow-500"
-                    style={{ width: "80%" }}
-                  ></div>
-                </div>
               </div>
             </div>
 
@@ -185,12 +167,6 @@ export default function Home() {
               <FaReact className="text-blue-400 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">React</div>
-                <div className="h-2 bg-gray-300 rounded">
-                  <div
-                    className="h-full bg-blue-400"
-                    style={{ width: "75%" }}
-                  ></div>
-                </div>
               </div>
             </div>
 
@@ -199,12 +175,6 @@ export default function Home() {
               <SiNextdotjs className="text-gray-800 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">Next.js</div>
-                <div className="h-2 bg-gray-300 rounded">
-                  <div
-                    className="h-full bg-gray-800"
-                    style={{ width: "85%" }}
-                  ></div>
-                </div>
               </div>
             </div>
 
@@ -213,12 +183,6 @@ export default function Home() {
               <SiExpress className="text-gray-600 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">Express.js</div>
-                <div className="h-2 bg-gray-300 rounded">
-                  <div
-                    className="h-full bg-gray-600"
-                    style={{ width: "80%" }}
-                  ></div>
-                </div>
               </div>
             </div>
 
@@ -227,12 +191,6 @@ export default function Home() {
               <FaNodeJs className="text-green-600 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">Node.js</div>
-                <div className="h-2 bg-gray-300 rounded">
-                  <div
-                    className="h-full bg-green-600"
-                    style={{ width: "85%" }}
-                  ></div>
-                </div>
               </div>
             </div>
 
@@ -241,18 +199,129 @@ export default function Home() {
               <SiMongodb className="text-green-500 mr-3 text-2xl md:text-3xl" />
               <div className="flex-1">
                 <div className="text-gray-300">MongoDB</div>
-                <div className="h-2 bg-gray-300 rounded">
-                  <div
-                    className="h-full bg-green-500"
-                    style={{ width: "75%" }}
-                  ></div>
-                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* End of Skills Overview */}
+        <section className="w-full h-full">
+          <h2 className="text-3xl font-bold text-gray-200 mb-8">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Project Card 1 */}
+            <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+              <img
+                src="../Estore/3.jpeg"
+                alt="Project 1"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-200 mb-2">
+                  E-Commerce Platform
+                </h3>
+                <p className="text-gray-400 mb-4">
+                  A full-stack e-commerce platform built with MERN stack
+                  featuring user authentication, product management, and payment
+                  integration.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-blue-500 text-sm rounded-full text-white">
+                    React
+                  </span>
+                  <span className="px-3 py-1 bg-green-500 text-sm rounded-full text-white">
+                    Node.js
+                  </span>
+                  <span className="px-3 py-1 bg-yellow-500 text-sm rounded-full text-white">
+                    MongoDB
+                  </span>
+                </div>
+                <div className="flex gap-4">
+                  <a href="#" className="text-blue-400 hover:text-blue-300">
+                    Live Demo
+                  </a>
+                  <a href="#" className="text-blue-400 hover:text-blue-300">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project Card 2 */}
+            <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+              <img
+                src="../Significo/4.png"
+                alt="Signi Foco"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-200 mb-2">
+                  Signi Foco
+                </h3>
+                <p className="text-gray-400 mb-4">
+                  A modern photography portfolio website showcasing professional
+                  photography services, client galleries, and booking
+                  functionality.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-blue-500 text-sm rounded-full text-white">
+                    Next.js
+                  </span>
+                  <span className="px-3 py-1 bg-green-500 text-sm rounded-full text-white">
+                    Tailwind
+                  </span>
+                  <span className="px-3 py-1 bg-purple-500 text-sm rounded-full text-white">
+                    Vercel
+                  </span>
+                </div>
+                <div className="flex gap-4">
+                  <a href="#" className="text-blue-400 hover:text-blue-300">
+                    Live Demo
+                  </a>
+                  <a href="#" className="text-blue-400 hover:text-blue-300">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+            {/* Project Card 3 */}
+            <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+              <img
+                src="../Netflix Movie Data/3.png"
+                alt="Movie App"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-200 mb-2">
+                  Movie App
+                </h3>
+                <p className="text-gray-400 mb-4">
+                  A dynamic movie application that allows users to browse,
+                  search, and discover movies with detailed information and
+                  ratings.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-blue-500 text-sm rounded-full text-white">
+                    React
+                  </span>
+                  <span className="px-3 py-1 bg-green-500 text-sm rounded-full text-white">
+                    API
+                  </span>
+                  <span className="px-3 py-1 bg-red-500 text-sm rounded-full text-white">
+                    CSS
+                  </span>
+                </div>
+                <div className="flex gap-4">
+                  <a href="#" className="text-blue-400 hover:text-blue-300">
+                    Live Demo
+                  </a>
+                  <a href="#" className="text-blue-400 hover:text-blue-300">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </>
   );
